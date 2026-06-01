@@ -1,0 +1,4 @@
+# CLI template dependencies
+# rich>=13.0  # красивый вывод
+# pyyaml>=6.0
+# click>=8.0  # альтернатива argparse

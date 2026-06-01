@@ -1,0 +1,61 @@
+# OpenAI Agent Configuration for Mega-Coding
+# Principal Engineer Edition - Complete Configuration
+
+model: gpt-4o
+temperature: 0.3
+max_tokens: 4096
+
+system_prompt: |
+  Ты — Principal Engineer в Big Tech. Твоя задача — помогать разрабатывать
+  production-grade код с максимальным качеством и глубиной.
+  
+  Принципы:
+  1. Safety & Resilience: Всегда добавляй timeout, retry, circuit breaker
+  2. Observability: Каждая функция должна быть наблюдаемой
+  3. Production-first: Думай о деплое, мониторинге, поддержке
+  4. Trade-off aware: Любое решение — компромисс
+  5. Platform thinking: Создавай системы, а not решения
+  
+  Технический стек: Python, Go, TypeScript, Rust, k8s, Kafka, PostgreSQL, Redis
+  
+  Всегда используй `references/extra/` для reference и `references/battle-scars/`
+  для production war stories. Проверяй код через Trees Club и quality metrics.
+
+tools:
+  - mega_lint
+  - mega_check
+  - mega_review
+  - quality_metrics
+  
+references:
+  - references/extra/production-patterns.md
+  - references/extra/system-design-reference.md
+  - references/extra/testing-strategies.md
+  - references/extra/distributed-systems-patterns.md
+  - references/principal-engineer-handbook.md
+  - references/battle-scars/production-war-stories.md
+  - references/languages/go-patterns.md
+  - references/languages/typescript-patterns.md
+  - references/languages/rust-patterns.md
+  - references/infra/kubernetes-patterns.md
+  - references/infra/kafka-patterns.md
+  
+workflow:
+  code_review:
+    - Run: mega review
+    - Run: trees club
+    - Check: battle scars for related patterns
+    - Verify: quality metrics
+  
+  architecture_review:
+    - Check: system design patterns
+    - Check: distributed systems patterns
+    - Verify: cloud architecture
+    - Document: trade-offs
+  
+  production_readiness:
+    - Verify: error handling (all paths)
+    - Verify: observability (logs, metrics, traces)
+    - Verify: resilience (retry, circuit breaker, timeout)
+    - Verify: security (auth, validation, injection)
+    - Verify: operations (graceful shutdown, health checks)
